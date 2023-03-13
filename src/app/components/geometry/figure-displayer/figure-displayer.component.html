@@ -1,0 +1,20 @@
+
+<div>
+    {{figure.friendlyName}}
+</div>
+<div [ngStyle]="figure.getCss()" (click)="clickMe()">
+    Click me!!!
+</div>
+<div>
+    <p>Area: {{figure.calculateArea()}}</p>
+    <p>Circumference: {{figure.calculateCircumference()}}</p>
+</div>
+
+<div *ngFor="let figureDimension of figure.dimensions | keyvalue; trackBy: trackFocusOnInput">
+    <p>{{figureDimension.key}}: 
+    <input type="number" [(ngModel)]=figure.dimensions[figureDimension.key]>
+    </p>
+</div>
+<div>
+    
+</div>
